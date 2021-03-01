@@ -11,14 +11,18 @@ def jogar():
     decisao = decisao_casa()
     if(decisao == True):
         fome= True#aqui faz diferença nao ter tomado café da manhã
-        decisao_caminho_trabalho()
+        decisao=decisao_caminho_trabalho()
 
     elif(decisao == False):
         fome = False#aqui faz diferença nao ter tomado café da manhã
-        decisao_caminho_trabalho()
+        descisao=decisao_caminho_trabalho()
     
+    if(decisao == True):
+        decisao_ida_hospital()
 
-    print("Você vai ajudar a princesa? (1) ou você vai trabalhar? (2)")   
+    elif(decisao == False):
+        decisao_ida_trabalho()
+      
     
     
 def estrutura_decisoria(decisao):
@@ -33,11 +37,7 @@ def decisao_casa():
     print("Você está na sua casa, pensando no que vem por aí no seu dia, com saudades da emoção que tinha de entrar pelos canos e derrotar tartarugas malignas.")
     print("No meio do seu devaneio você percebe que não tomou café da manhã e que precisa sair de casa.")
     decisao=int(input("Você sai de casa imediatamente pro trabalho(1) ou toma café da manhã antes(2): "))
-    if(decisao == 1):
-        decisao = True
-    
-    elif(decisao == 2):
-        decisao = False
+    decisao=estrutura_decisoria(decisao)
     return decisao
         
 def decisao_caminho_trabalho():
@@ -45,6 +45,9 @@ def decisao_caminho_trabalho():
     print("Levar os suprimentos para um hospital próximo que está passando por problemas.")
     print("E aí? Você topa?")
     print("(1) Sim (2) Não")
+    decisao=int(input())
+    decisao=estrutura_decisoria(decisao)
+    return decisao
 
 def final():
     print("Fim de jogo deseja jogar novamente? Digite 1 para sim ou qualquer outra tecla para fechar o jogo")
