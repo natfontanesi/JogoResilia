@@ -6,7 +6,7 @@
 
 
 
-[![Markdown](https://gph.is/2OtD3mw)]
+[![Markdown](https://raw.githubusercontent.com/natfontanesi/JogoResilia/main/gif.gif)]
     
 ## Como é o jogo:  
 - Escolha entre as opções dadas(1 ou 2)  
