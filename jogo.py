@@ -2,14 +2,20 @@ def jogar():
     print("**********************************")
     print("Bem vindo ao jogo Mário Versus Corona")
     print("**********************************")
+    #fatores de vitória ou derrota
+    #cansaço
+    #fome
+    #coragem
+    #contagio
 
     decisao = decisao_casa()
     if(decisao == True):
+        fome= True#aqui faz diferença nao ter tomado café da manhã
         decisao_caminho_trabalho()
 
     elif(decisao == False):
-        print ("Você está em casa tomando café quando seu telefone toca")
-        decisao_café_da_manhã()
+        fome = False#aqui faz diferença nao ter tomado café da manhã
+        decisao_caminho_trabalho()
     
 
     print("Você vai ajudar a princesa? (1) ou você vai trabalhar? (2)")   
@@ -17,10 +23,11 @@ def jogar():
     
 def estrutura_decisoria(decisao):
     if(decisao == 1):
-        return decisao = True
+        decisao = True
     
     elif(decisao == 2):
-        return decisao = False 
+        decisao = False
+    return decisao
 
 def decisao_casa():
     print("Você está na sua casa, pensando no que vem por aí no seu dia, com saudades da emoção que tinha de entrar pelos canos e derrotar tartarugas malignas.")
@@ -44,5 +51,4 @@ def final():
     decisao = int(input())
     if(decisao == 1):
         jogar()
-    else:
-        break
+    
