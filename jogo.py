@@ -19,11 +19,16 @@ def jogar():
         descisao=decisao_caminho_trabalho()
     
     if(decisao == True):
-        decisao_ida_hospital()
+        decisao = decisao_ida_hospital()
 
     elif(decisao == False):
-        decisao_ida_trabalho()
-      
+        decisao = decisao_ida_trabalho()
+        
+    if(decisao == True):
+        decisao = enfrentando_bowser()
+
+    elif(decisao == False):
+        decisao = morrer_de_fome()  
     
     
 def estrutura_decisoria(decisao):
@@ -49,6 +54,36 @@ def decisao_caminho_trabalho():
     decisao=int(input())
     decisao=estrutura_decisoria(decisao)
     return decisao
+
+def decisao_ida_hospital():
+    print("Você está com a princesa Peaches, precisa buscar oxigênio e resíradores do outro lado da cidade.")
+    print("Você chama o Yoshi para carregar as coisas com você")
+    print("Você ta com fome da uma parada para comer (1) Não para,está com pressa (2)")
+    decisao=int(input())
+    decisao=estrutura_decisoria(decisao)
+    return decisao
+
+def decisao_ida_trabalho():
+    print("Você chega ao trabalho e vem noticia de Lockdown na cidade, os hospitais estão cheios")
+    print("Oh não! Temos suspeita de covid no trabalho e vc teve contato com koopa tropa doente")
+    print("Você está em quarentena, você perdeu!")
+    final()
+
+def enfrentando_bowser():
+    print("Enquanto você e Yoshi descarregam os suprimentos, Bowser aparece muito bravo.")
+    print("Você está fazendo o que aqui? - Ele pergunta - Já não falei que é só uma gripezinha?")
+    print("Você enfrenta ele(1) ou vai embora(2)")
+    decisao=int(input())
+    decisao=estrutura_decisoria(decisao)
+    return decisao
+
+
+def morrer_de_fome():
+    print("Enquanto você e Yoshi descarregam os suprimentos, você tem um mal súbito devido a falta de comida.")
+    print("Oh não! Você está sendo levado ao hospital")
+    print("Você está internado, você perdeu!")
+    final()
+
 
 def final():
     print("Fim de jogo deseja jogar novamente? Digite 1 para sim ou qualquer outra tecla para fechar o jogo")
