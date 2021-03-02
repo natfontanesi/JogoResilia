@@ -9,25 +9,27 @@ def jogar():
     #contagio
 
     decisao = decisao_casa()
-    if(decisao == True):
-        fome= True#aqui faz diferença nao ter tomado café da manhã
-  
+    if(decisao == True):#decisao_casa
+        fome= True #aqui faz diferença nao ter tomado café da manhã
+        decisao = decisao_caminho_trabalho
+
+    elif(decisao == False):#decisao_casa
+        fome = False #aqui faz diferença nao ter tomado café da manhã
         decisao=decisao_caminho_trabalho()
-
-    elif(decisao == False):
-        fome = False#aqui faz diferença nao ter tomado café da manhã
-        descisao=decisao_caminho_trabalho()
     
-    if(decisao == True):
-        decisao = decisao_ida_hospital()
+    if(decisao == True):#decisao_caminho_trabalho
+        decisao_hosp = decisao_ida_hospital_fome()
 
-    elif(decisao == False):
-        decisao = decisao_ida_trabalho()
+    elif(decisao == False):#decisao_caminho_trabalho
+        decisao_hosp = decisao_ida_trabalho()
+
+    if(decisao_hosp == False and fome== True):#decisao_ida_hospital
+        decisao= morrer_de_fome
         
-    if(decisao == True):
+    elif(decisao_hosp == True):
         decisao = enfrentando_bowser()
 
-    elif(decisao == False):
+    elif(decisao_hosp == False and fome == False):
         decisao = morrer_de_fome()  
     
     
@@ -55,7 +57,7 @@ def decisao_caminho_trabalho():
     decisao=estrutura_decisoria(decisao)
     return decisao
 
-def decisao_ida_hospital():
+def decisao_ida_hospital_fome():
     print("Você está com a princesa Peaches, precisa buscar oxigênio e resíradores do outro lado da cidade.")
     print("Você chama o Yoshi para carregar as coisas com você")
     print("Você ta com fome da uma parada para comer (1) Não para,está com pressa (2)")
@@ -76,7 +78,6 @@ def enfrentando_bowser():
     decisao=int(input())
     decisao=estrutura_decisoria(decisao)
     return decisao
-
 
 def morrer_de_fome():
     print("Enquanto você e Yoshi descarregam os suprimentos, você tem um mal súbito devido a falta de comida.")
