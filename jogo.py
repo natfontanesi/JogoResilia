@@ -24,13 +24,19 @@ def jogar():
         decisao_hosp = decisao_ida_trabalho()
 
     if(decisao_hosp == False and fome== True):#decisao_ida_hospital
-        decisao= morrer_de_fome
+        decisao_bowser= morrer_de_fome
         
     elif(decisao_hosp == True):
-        decisao = enfrentando_bowser()
+        decisao_bowser = enfrentando_bowser()
 
     elif(decisao_hosp == False and fome == False):
-        decisao = morrer_de_fome()  
+        decisao_bowser = enfrentando_bowser()
+
+    if(decisao == True):#decisao_bowser
+        decisao = decisao_bowser2()
+
+    elif(decisao == False):#decisao_bowser
+        decisao = decisao_coragem()
     
     
 def estrutura_decisoria(decisao):
@@ -85,6 +91,11 @@ def morrer_de_fome():
     print("Você está internado, você perdeu!")
     final()
 
+def decisao_bowser2():
+    print("")
+
+def decisao_coragem():
+    print("")
 
 def final():
     print("Fim de jogo deseja jogar novamente? Digite 1 para sim ou qualquer outra tecla para fechar o jogo")
