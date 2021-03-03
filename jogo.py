@@ -7,6 +7,18 @@ def jogar():
     #fome
     #coragem
     #contagio
+    personagem = int(input("Com quem você deseja jogar?\n1-Mário 2- Luigi 3- Daisy"))
+    while(personagem != 1 and personagem != 2 and personagem != 3):
+        int(input("Com quem você deseja jogar?\n1-Mário 2- Luigi 3- Daisy"))
+    
+    if(personagem == 1 ):
+        personagem = "Mario"
+    elif (personagem == 2):
+        personagem= "Luigi"
+    elif(personagem == 3):
+        personagem= "Daisy"
+    
+    
 
     decisao = decisao_casa()
     if(decisao == True):#decisao_casa
@@ -33,9 +45,11 @@ def jogar():
         decisao_bowser = enfrentando_bowser()
 
     if(decisao == True):#decisao_bowser
+        coragem = True
         decisao = decisao_bowser2()
 
     elif(decisao == False):#decisao_bowser
+        coragem = False
         decisao = decisao_coragem()
     
     
@@ -64,7 +78,7 @@ def decisao_caminho_trabalho():
     return decisao
 
 def decisao_ida_hospital_fome():
-    print("Você está com a princesa Peaches, precisa buscar oxigênio e resíradores do outro lado da cidade.")
+    print("Você está com a princesa Peaches no hospital e precisa buscar oxigênio e resíradores do outro lado da cidade.")
     print("Você chama o Yoshi para carregar as coisas com você")
     print("Você ta com fome da uma parada para comer (1) Não para,está com pressa (2)")
     decisao=int(input())
@@ -80,7 +94,7 @@ def decisao_ida_trabalho():
 def enfrentando_bowser():
     print("Enquanto você e Yoshi descarregam os suprimentos, Bowser aparece muito bravo.")
     print("Você está fazendo o que aqui? - Ele pergunta - Já não falei que é só uma gripezinha?")
-    print("Você enfrenta ele(1) ou vai embora(2)")
+    print("Você enfrenta ele(1) ou vai embora(2)?")
     decisao=int(input())
     decisao=estrutura_decisoria(decisao)
     return decisao
@@ -91,11 +105,21 @@ def morrer_de_fome():
     print("Você está internado, você perdeu!")
     final()
 
-def decisao_bowser2():
-    print("")
+def decisao_bowser2(personagem):
+    print("Voce não deveria estar em outro lugar? O que está fazendo aqui? - Pergunta Bowservisivelmente bravo")
+    print("Eu vim ajudar no combate contra a covid, o senhor entende ne?")
+    print("Eu não peguei essa gripezinha, isso é tudo alarde da imprensa!- Responde ele")
+    print("E agora {}, você continua a discussão (1) ou simplesmente pede demissão(2)".format(personagem))
 
 def decisao_coragem():
+    print("Você se deixou levar pelo medo e agora os suprimentos não serão entregues a tempo")
+    print("Você perdeu!")
+
+def decisao_demissao():
+    print("Você muito corajosamente pediu demissão e agora é um homem livre, porém não pensou que seria tão fácil assim não é?")
+    print("Bowser ainda está inconformado e está tentando atrapalhar a entrega de suprimentos, segundo ele é tudo golpe da mídia")
     print("")
+
 
 def final():
     print("Fim de jogo deseja jogar novamente? Digite 1 para sim ou qualquer outra tecla para fechar o jogo")
