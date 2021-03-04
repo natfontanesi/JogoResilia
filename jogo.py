@@ -2,12 +2,9 @@ def jogar():
     print("**********************************")
     print("Bem vindo ao jogo Mário Versus Corona")
     print("**********************************")
-    #fatores de vitória ou derrota
-    #cansaço
-    #fome
-    #coragem
-    #contagio
-    personagem = int(input("Com quem você deseja jogar?\n1-Mário 2- Luigi 3- Daisy"))
+    
+
+    personagem = int(input("Com quem você deseja jogar?\n1-Mário 2- Luigi 3- Daisy:"))
     while(personagem != 1 and personagem != 2 and personagem != 3):
         int(input("Com quem você deseja jogar?\n1-Mário 2- Luigi 3- Daisy"))
     
@@ -29,28 +26,58 @@ def jogar():
         fome = False #aqui faz diferença nao ter tomado café da manhã
         decisao=decisao_caminho_trabalho()
     
-    if(decisao == True):#decisao_caminho_trabalho
-        decisao_hosp = decisao_ida_hospital_fome()
+
+    if(decisao == True and fome == True):#decisao_caminho_trabalho
+        decisao = decisao_ida_hospital_fome()
 
     elif(decisao == False):#decisao_caminho_trabalho
-        decisao_hosp = decisao_ida_trabalho()
+        decisao = decisao_ida_trabalho()
+    
+    elif(decisao == True and fome == False):#decisao_caminho_trabalho
+        decisao = enfrentando_bowser()
 
-    if(decisao_hosp == False and fome== True):#decisao_ida_hospital
-        decisao_bowser= morrer_de_fome
+
+    if(decisao == False and fome== True):#decisao_ida_hospital_fome
+        decisao= morrer_de_fome
+        final()
         
-    elif(decisao_hosp == True):
-        decisao_bowser = enfrentando_bowser()
+    elif(decisao == True):
+        decisao = enfrentando_bowser()
 
-    elif(decisao_hosp == False and fome == False):
-        decisao_bowser = enfrentando_bowser()
+    elif(decisao == False and fome == False):
+        decisao = enfrentando_bowser()
 
-    if(decisao == True):#decisao_bowser
+
+    if(decisao == True):#enfrentando_bowser
         coragem = True
-        decisao = decisao_bowser2()
+        decisao = decisao_bowser2(personagem)
 
-    elif(decisao == False):#decisao_bowser
+    elif(decisao == False):#enfrentando_bowser
         coragem = False
         decisao = decisao_coragem()
+        final()
+
+    if(decisao == True):#decisão_bowser2
+        decisao = decisao_conversa()
+        final()
+
+    elif(decisao == False):#decisao_bowser2
+        decisao = decisao_demissao(personagem)
+
+    if(decisao == True):#decisao_demissao
+        decisao = decisao_laranja()
+        final()
+
+    elif(decisao == False):#decisao_demissao
+        decisao = decisao_fake_news(personagem)
+    
+    if(decisao == True):#decisao_fake
+        decisao = decisao_policia()
+        final()
+
+    elif(decisao == False):#decisao_fake
+        decisao = decisao_ciencia(personagem)
+        final()
     
     
 def estrutura_decisoria(decisao):
@@ -80,7 +107,7 @@ def decisao_caminho_trabalho():
 def decisao_ida_hospital_fome():
     print("Você está com a princesa Peaches no hospital e precisa buscar oxigênio e resíradores do outro lado da cidade.")
     print("Você chama o Yoshi para carregar as coisas com você")
-    print("Você ta com fome da uma parada para comer (1) Não para,está com pressa (2)")
+    print("Você ta com fome da uma parada para comer (1) Não para, está com pressa (2)")
     decisao=int(input())
     decisao=estrutura_decisoria(decisao)
     return decisao
@@ -115,16 +142,36 @@ def decisao_coragem():
     print("Você se deixou levar pelo medo e agora os suprimentos não serão entregues a tempo")
     print("Você perdeu!")
 
+def decisao_conversa():
+    print("Você se deixou levar pela discussão e agora os suprimentos não serão entregues a tempo")
+    print("Você perdeu!")
+
 def decisao_demissao(personagem):
     print("Você muito corajosamente pediu demissão e agora é um homem livre, porém não pensou que seria tão fácil assim não é?")
     print("Bowser ainda está inconformado e está tentando atrapalhar a entrega de suprimentos, segundo ele é tudo golpe da mídia")
     print("O capitão Cloroquina chega para ajudar Bowser e agora, {}, o que vc vai fazer?".format(personagem))
     print("Seguir seu caminho até o hospital deixando varias laranjas pelo caminho (1) Jogar uma bomba de Fake News no Capitão (02)")
 
+def decisao_laranja():
+    print("Muito bem! Bowser pe alérgico a laranjas, você conseguiu despistá-lo.")
+    print("Parabéns! Você ajudou Peaches e muitas pessoas que precisavam de suprimentos no hospital")
+
+def decisao_fake_news():
+    print("As fake news não surtiram o efeito desejado, agora você está no meio de uma manifestação apoiando Bowser")
+    print("Mas há uma maneira de escapar, você chama a policia para te ajudar (1) ou você espanta os manifestantes com um artigo cientifico(2)")
+
+def decisao_policia():
+    print("Você perdeu")
+
+def decisao_ciencia():
+    print("Você ganhou!")
 
 def final():
     print("Fim de jogo deseja jogar novamente? Digite 1 para sim ou qualquer outra tecla para fechar o jogo")
     decisao = int(input())
     if(decisao == 1):
         jogar()
-    
+
+
+if(__name__ == "__main__"):
+    jogar()
