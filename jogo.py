@@ -119,7 +119,7 @@ def decisao_demissao(personagem):
     print("Você muito corajosamente pediu demissão e agora é um homem livre, porém não pensou que seria tão fácil assim não é?")
     print("Bowser ainda está inconformado e está tentando atrapalhar a entrega de suprimentos, segundo ele é tudo golpe da mídia")
     print("O capitão Cloroquina chega para ajudar Bowser e agora, {}, o que vc vai fazer?".format(personagem))
-    print("Seguir seu caminho até o hospital (1) Jogar uma bomba de Fake News no Capitão (02)")
+    print("Seguir seu caminho até o hospital deixando varias laranjas pelo caminho (1) Jogar uma bomba de Fake News no Capitão (02)")
 
 
 def final():
