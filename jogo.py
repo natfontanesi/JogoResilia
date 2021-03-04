@@ -20,7 +20,7 @@ def jogar():
     decisao = decisao_casa()
     if(decisao == True):#decisao_casa
         fome= True #aqui faz diferença nao ter tomado café da manhã
-        decisao = decisao_caminho_trabalho
+        decisao = decisao_caminho_trabalho()
 
     elif(decisao == False):#decisao_casa
         fome = False #aqui faz diferença nao ter tomado café da manhã
