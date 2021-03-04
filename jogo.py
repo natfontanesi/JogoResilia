@@ -1,11 +1,13 @@
 def jogar():
-    print("**********************************")
-    print("Bem vindo ao jogo Mário Versus Corona")
-    print("**********************************")
+    
+    print("█▄▄ █▀▀ █▀▄▀█ ▄▄ █░█ █ █▄░█ █▀▄ █▀█   ▄▀█ █▀█   █▀▄▀█ ▄▀█ █▀█ █ █▀█   █░█ █▀▀ █▀█ █▀ █░█ █▀  █▀▀ █▀█ █░█ █ █▀▄ ▄█ █▀█")
+    print("█▄█ ██▄ █░▀░█ ░░ ▀▄▀ █ █░▀█ █▄▀ █▄█   █▀█ █▄█   █░▀░█ █▀█ █▀▄ █ █▄█   ▀▄▀ ██▄ █▀▄ ▄█ █▄█ ▄█  █▄▄ █▄█ ▀▄▀ █ █▄▀░ █ ▀▀█")
 
-    personagem = int(input("Com quem você deseja jogar?\n1-Mário 2- Luigi 3- Daisy:"))
+    print("Com quem você deseja jogar?")
+    personagem = int(input("Mário(1) -- Luigi(2) -- Daisy(3)"))
     while personagem != 1 and personagem != 2 and personagem != 3:
-        int(input("Com quem você deseja jogar?\n1-Mário 2- Luigi 3- Daisy"))
+        print("Com quem você deseja jogar?")
+        personagem = int(input("Mário(1) -- Luigi(2) -- Daisy(3)"))
 
     if personagem == 1:
         personagem = "Mario"
