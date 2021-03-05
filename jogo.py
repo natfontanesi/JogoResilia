@@ -4,7 +4,8 @@ def jogar():
     print("█▄█ ██▄ █░▀░█ ░░ ▀▄▀ █ █░▀█ █▄▀ █▄█   █▀█ █▄█   █░▀░█ █▀█ █▀▄ █ █▄█   ▀▄▀ ██▄ █▀▄ ▄█ █▄█ ▄█  █▄▄ █▄█ ▀▄▀ █ █▄▀░ █ ▀▀█")
 
     print("Com quem você deseja jogar?")
-    personagem = int(input("Mário(1) -- Luigi(2) -- Daisy(3)"))
+    print("Mário(1) -- Luigi(2) -- Daisy(3)")
+    personagem = int(input("--> "))
     while personagem != 1 and personagem != 2 and personagem != 3:
         print("Com quem você deseja jogar?")
         personagem = int(input("Mário(1) -- Luigi(2) -- Daisy(3)"))
@@ -88,7 +89,8 @@ def estrutura_decisoria(decisao):
 def decisao_casa():
     print("Você está na sua casa, pensando no que vem por aí no seu dia, com saudades da emoção que tinha de entrar pelos canos e derrotar tartarugas malignas.")
     print("No meio do seu devaneio você percebe que não tomou café da manhã e que precisa sair de casa.")
-    decisao = int(input("Você sai de casa imediatamente pro trabalho(1) ou toma café da manhã antes(2): "))
+    print("Você sai de casa imediatamente pro trabalho(1) ou toma café da manhã antes(2)")
+    decisao = int(input("--> "))
     decisao = estrutura_decisoria(decisao)
     return decisao
 
@@ -99,7 +101,7 @@ def decisao_caminho_trabalho():
     print("Levar os suprimentos para um hospital próximo que está passando por problemas.")
     print("E aí? Você topa?")
     print("(1) Sim (2) Não")
-    decisao = int(input())
+    decisao = int(input("--> "))
     decisao = estrutura_decisoria(decisao)
     return decisao
 
@@ -109,7 +111,7 @@ def decisao_ida_hospital_fome():
         "Você está com a princesa Peaches no hospital e precisa buscar oxigênio e resíradores do outro lado da cidade.")
     print("Você chama o Yoshi para carregar as coisas com você")
     print("Você ta com fome da uma parada para comer (1) Não para, está com pressa (2)")
-    decisao = int(input())
+    decisao = int(input("--> "))
     decisao = estrutura_decisoria(decisao)
     return decisao
 
@@ -125,7 +127,7 @@ def enfrentando_bowser():
     print("Enquanto você e Yoshi descarregam os suprimentos, Bowser aparece muito bravo.")
     print("Você está fazendo o que aqui? - Ele pergunta - Já não falei que é só uma gripezinha?")
     print("Você enfrenta ele(1) ou vai embora(2)?")
-    decisao = int(input())
+    decisao = int(input("--> "))
     decisao = estrutura_decisoria(decisao)
     return decisao
 
@@ -142,7 +144,7 @@ def decisao_bowser2(personagem):
     print("Eu vim ajudar no combate contra a covid, o senhor entende ne?")
     print("Eu não peguei essa gripezinha, isso é tudo alarde da imprensa!- Responde ele")
     print("E agora {}, você continua a discussão (1) ou simplesmente pede demissão(2)".format(personagem))
-    decisao = int(input())
+    decisao = int(input("--> "))
     decisao = estrutura_decisoria(decisao)
     return decisao
 
@@ -164,7 +166,7 @@ def decisao_demissao(personagem):
     print("O capitão Cloroquina chega para ajudar Bowser e agora, {}, o que vc vai fazer?".format(personagem))
     print(
         "Seguir seu caminho até o hospital deixando varias laranjas pelo caminho (1) Jogar uma bomba de Fake News no Capitão (02)")
-    decisao = int(input())
+    decisao = int(input("--> "))
     decisao = estrutura_decisoria(decisao)
     return decisao
 
@@ -177,7 +179,7 @@ def decisao_fake_news():
     print("As fake news não surtiram o efeito desejado, agora você está no meio de uma manifestação apoiando Bowser")
     print(
         "Mas há uma maneira de escapar, você chama a policia para te ajudar (1) ou você espanta os manifestantes com um artigo cientifico(2)")
-    decisao = int(input())
+    decisao = int(input("--> "))
     decisao = estrutura_decisoria(decisao)
     return decisao
 
@@ -191,7 +193,7 @@ def decisao_ciencia():
 
 def final():
     print("Fim de jogo deseja jogar novamente? Digite 1 para sim ou qualquer outra tecla para fechar o jogo")
-    decisao = int(input())
+    decisao = int(input("--> "))
     if (decisao == 1):
         jogar()
 
