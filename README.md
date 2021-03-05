@@ -1,4 +1,4 @@
-# JogoResilia
+# Mario versus Covid-19
 
 ## Em 2021 tudo mudou até a vida de Mário, Luigi e cia.
 ## Trabalhando para Bowser, Mário e seus amigos tem que ajudar a princesa na luta contra a covid e precisam dos medicamentos corretos e da vacina.
