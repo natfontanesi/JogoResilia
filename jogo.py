@@ -184,11 +184,11 @@ def decisao_fake_news():
     return decisao
 
 def decisao_policia():
-    print("Você perdeu")
+    print("A policia prendeu você ao invés de prender o cloroquiner Bowser! Você perdeu")
 
 
 def decisao_ciencia():
-    print("Você ganhou!")
+    print("Muito bem! Todos ficaram chocados com o contato com a ciência e saíram correndo!! Você ganhou!")
 
 
 def final():

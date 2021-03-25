@@ -1,8 +1,8 @@
 # Mario versus Covid-19
 
-## Em 2021 tudo mudou até a vida de Mário, Luigi e cia.
-## Trabalhando para Bowser, Mário e seus amigos tem que ajudar a princesa na luta contra a covid e precisam dos medicamentos corretos e da vacina.
-## Mas cuidado! Bowser é famoso por ser cloroquiner e não está levando essa gripezinha a sério.
+### Em 2021 tudo mudou até a vida de Mário, Luigi e cia.
+### Trabalhando para Bowser, Mário e seus amigos tem que ajudar a princesa na luta contra a covid mas precisam dos medicamentos corretos e da vacina.
+### Mas cuidado! Bowser é famoso por ser cloroquiner e não está levando essa gripezinha a sério.
 
 
 
